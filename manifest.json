@@ -1,0 +1,26 @@
+{
+    "name": "Hello, World!",
+    "version": "1.0.6",
+    "manifest_version": 2,
+    "description":"This extension retrive the test case executed by tester",
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "browser_action": {
+      "default_icon": "download.png",
+      "default_popup": "hello.html"
+    },
+    "content_scripts":[
+{
+  "matches":["<all_urls>"],
+  "js":["app.js"]
+}
+    ],
+    "permissions": ["webRequest", "webRequestBlocking", "tabs","<all_urls>"],
+    "externally_connectable":{
+      "matches":[
+        "*://localhost/*"
+
+      ]
+    }
+  }
